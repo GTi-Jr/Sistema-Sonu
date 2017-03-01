@@ -1,0 +1,17 @@
+<h1>Event#index</h1>
+
+<% if user_signed_in? %>
+<ul>
+  <li><h3><%= current_user.email %></h3></li>
+</ul>
+
+
+<% else %>
+
+<ul>
+  <li><%= link_to "Login", new_user_session_path %></li>
+</ul>
+
+
+<% end %>
+
