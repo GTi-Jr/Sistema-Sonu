@@ -1,13 +1,13 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+#  def initialize(user)
     
-          if user.admin?
-           can :manage, :all
-          else
-           can [:read, :update, :create], Home
-          end
+ #         if user.admin?
+  #         can :manage, :all
+   #       else
+    #       can [:read, :update, :create], Home
+     #     end
 
           
           
@@ -40,5 +40,5 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
-  end
+ # end
 end
