@@ -1,10 +1,28 @@
 Rails.application.routes.draw do
 
+  resources :sonu_events
+  devise_for :admins
+  devise_for :users
+  resources :users
   resources :cars
   get 'dev_test/index'
 
-  devise_for :users
-  get 'event/index'
+  
+  devise_scope :user do
+          get '/login' => 'devise/sessions#new'
+          get '/logout' => 'devise/sessions#destroy'
+  end
+
+  
+  resource :user, :controller => "user"
+  
+  
+  devise_scope :admin do
+          get '/login_admin' => 'devise/sessions#new'
+          get '/logout_admin' => 'devise/sessions#destroy'
+  end
+
+ resource :admin, :controller => "admin" 
 
 #  get 'test_controller/index'
 #  root :to => "test_controller#index"

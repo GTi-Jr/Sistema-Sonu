@@ -1,2 +1,16 @@
 <h1>DevTest#index</h1>
+
+<% if admin_signed_in? %>
+<ul>
+  <li><h3><%= current_admin.email %></h3></li>
+</ul>
+
+  <% else %>
+
+<ul>
+  <li><%= link_to "Login", new_admin_session_path %></li>
+</ul>
+
+
+<% end %>
 <p>Find me in app/views/dev_test/index.html.erb</p>

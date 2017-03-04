@@ -1,0 +1,1 @@
+json.partial! "sonu_events/sonu_event", sonu_event: @sonu_event

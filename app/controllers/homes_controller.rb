@@ -1,8 +1,9 @@
 class HomesController < ApplicationController
-  before_action :authenticate_user!
+#before_action :authenticate_user!
   before_action :set_home, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
   # GET /homes
+
   # GET /homes.json
   def index
     @homes = Home.all

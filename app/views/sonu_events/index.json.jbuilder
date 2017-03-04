@@ -1,0 +1,1 @@
+json.array! @sonu_events, partial: 'sonu_events/sonu_event', as: :sonu_event
