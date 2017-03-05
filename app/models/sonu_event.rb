@@ -1,3 +1,3 @@
 class SonuEvent < ApplicationRecord
-belongs_to :admins
+belongs_to :admin
 end

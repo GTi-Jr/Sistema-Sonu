@@ -1,12 +1,11 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(admin)
+  def initialize(user)
     if admin 
          can [:create, :read, :update, :destroy], SonuEvent 
-         # can :manage, :all 
 
-     else
+    else
           can :read, SonuEvent
     end
 
