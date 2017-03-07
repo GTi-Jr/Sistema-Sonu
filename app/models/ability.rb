@@ -1,15 +1,14 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
-    if admin 
-         can [:create, :read, :update, :destroy], SonuEvent 
+  def initialize(admin)
 
+    if admin
+      can [:read, :create, :update, :destroy], SonuEvent
     else
-          can :read, SonuEvent
+      can :read, SonuEvent
     end
-
-    
+ 
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

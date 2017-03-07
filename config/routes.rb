@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :sonu_events
-  devise_for :admins
   devise_for :users
   resources :users
+  resources :sonu_events
+  devise_for :admins
   resources :cars
   get 'dev_test/index'
 
