@@ -1,6 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 before_action :configure_sign_up_params, only: [:create]
 before_action :configure_account_update_params, only: [:update]
+before_action :get_user
 
   # GET /resource/sign_up
    def new
@@ -34,16 +35,15 @@ before_action :configure_account_update_params, only: [:update]
    def update
 
       respond_to do |format|
-        if @user.save && @user.update_attributes(user_params)
+        if @user.save && @user.update_attributes(inscription_params)
           flash[:success] = "Dados atualizados"
           format.html{ redirect_to authenticated_user_root_path}
         else
           format.html { render 'edit'}
           format.json{ render json: @user.errors} #Acho que essa parte
                                                   #manda as mensganes de erro in page
-
+        end
       end
-    end
    end
 
 
