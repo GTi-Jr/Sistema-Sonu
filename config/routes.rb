@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   devise_scope :user do
 
     authenticated :user do
-      root to: "dashboard#index",  as: :authenticated_user_root
+      root to: "users/dashboard#index",  as: :authenticated_user_root
     end
 
     unauthenticated :users do
@@ -44,6 +44,8 @@ Rails.application.routes.draw do
 
     get '/senha/editar' => 'users/registrations#edit_password', :as => 'password_edit'
     put '/senha' => 'users/registrations#update_password'
+
+    get '/logout' => 'users/sessions#destroy'
   end
 
 

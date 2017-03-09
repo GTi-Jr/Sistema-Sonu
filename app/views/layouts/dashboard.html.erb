@@ -1,7 +1,25 @@
-<%#-- <h2><%= t('.sign_up') %></h2> %>
-
 <h2>User Dashboard </h2>
 
+
+
+<head> <% if user_signed_in? %>
+
+  <h3>Logout_link</h3></li>
+  <%= link_to(destroy_user_session_path, :method => :delete, class: 'btn btn-default btn-flat')  do %>
+  Logout
+  <% end %>
+
+  <h3>Cadstro_edit_link</h3></li>
+  <%= link_to "Editar Cadastro", edit_user_registration_path%>
+
+
+
+  <h3>PasswordEdit_link</h3></li>
+  <%= link_to "cacilds vidis litro abertis", password_edit_path %>
+
+  <%end%>
+
+<head>
 
 <div class="row">
   <div class="col-sm-12">
@@ -9,13 +27,19 @@
   </div>
   <hr  style="margin-bottom: 0px">
   <div class="col-sm-6 ">
-    <b>Nome:</b> <%=@user.name.upcase %><br>
-    <b>Email:</b> <%=@user.email.upcase %><br>
-    <b>CPF:</b> <%=@user.cpf %><br>
-    <b>Data de nascimento:</b> <%=@user.birthdate %>
+
+    <%if !@user.name.nil? %>
+    <b>Nome:</b> <%=@user.name%><br>
+    <%else%>
+    <b>NULL</b>
+    <%end%>
+
+    <b>Email:</b> <%=@user.email %><br>
+    <b>CPF:</b> <%=@user.cpf%><br>
+    <b>Data de nascimento:</b> <%=@user.birthdate %><br>
 
     <b>RG:</b> <%=@user.rg %><br>
-    <b>Gênero:</b> <%=@user.gender.upcase %><br>
+    <b>Gênero:</b> <%=@user.gender %><br>
     <b>Telefone:</b> <%=@user.phone %><br>
     <b>Celular:</b> <%=@user.cel%><br>
 
@@ -25,6 +49,18 @@
     <b>Complemento:</b><%=@user.address_complement%><br>
     <%end%>
     <b>Cidade: </b><%=@user.city%><br>
+
+
+    <b>
+
+      Mussum Ipsum, cacilds vidis litro abertis. Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Leite de capivaris, leite de mula manquis. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Delegadis gente finis, bibendum egestas augue arcu ut est.
+    </b>
+
+
+
+
+
+
 
   </div>
 </div>

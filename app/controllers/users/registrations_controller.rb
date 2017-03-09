@@ -10,19 +10,19 @@ before_action :get_user
 
   # POST /resource
    def create
-     super
-    # @user = User.new(inscription_params)
-    # @user.active = true
-    # set_minimum_password_length
-    # if @user.save
-    #   flash[:success] = "Inscrição realizada com sucesso."
-    #   redirect_to authenticated_user_root_path
-    #
-    # else
-    #   flash[:error] = "Ocorreu um erro e não foi possível completar sua inscrição"
-    #   redirect_to new_user_registration_path
-   end
+    #  super
+    @user = User.new(inscription_params)
+    #@user.active = true
+    set_minimum_password_length
+    if @user.save
+      flash[:success] = "Inscrição realizada com sucesso."
+      redirect_to authenticated_user_root_path
 
+    else
+      flash[:error] = "Ocorreu um erro e não foi possível completar sua inscrição"
+      redirect_to new_user_registration_path
+   end
+end
   # GET /resource/edit
   # Modificar isso aqui depois, para que o ususário
   # possa editar algum dado como nome e talz
@@ -100,6 +100,9 @@ before_action :get_user
 
   def inscription_params
     params.require(:user).permit(
+     :name,
+     :email,
+     :password,
      :rg,
      :cpf,
      :birthdate,
