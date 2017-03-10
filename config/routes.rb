@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   # devise_for :users
   resources :sonu_events
   devise_for :admins
-  resources :cars
   get 'dev_test/index'
 
 
@@ -76,7 +75,6 @@ Rails.application.routes.draw do
 
  # resources :users
   resources :dev_test
-  resources :homes
 #  resources :test_controller
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
