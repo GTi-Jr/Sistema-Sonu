@@ -1,4 +1,6 @@
-class Crew::AdminDashboardController < ApplicationController
+class Crew::AdminDashboardController < Crew::BaseController
+before_action :authenticate_admin!
+
   def index
   end
 end
