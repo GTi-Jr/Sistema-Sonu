@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   #devise_for :users
   # devise_for :users
   resources :sonu_events
-  devise_for :admins
+  #devise_for :admins
   get 'dev_test/index'
 
 
@@ -28,8 +28,11 @@ Rails.application.routes.draw do
     }
 
     devise_scope :admin do
+      resources :admin
       authenticated  do
         root 'admin_dashboard#index',  as: :authenticated_admin_root
+
+
         # resources :users
         # #resources :lots
         # resources :admins
@@ -78,7 +81,7 @@ Rails.application.routes.draw do
     end
 
 
-    resources :admins
+
 
   end
 

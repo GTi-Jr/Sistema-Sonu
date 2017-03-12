@@ -1,10 +1,10 @@
 <h1>DevTest#index</h1>
 
-<% if admin_signed_in? %>
+<% if crew_admin_signed_in? %>
 <ul>
-  <li><h3><%= current_admin.email %></h3></li>
+  <li><h3><%= current_crew_admin.email %></h3></li>
 
-  <li><%= link_to "Logout", destroy_admin_session_path, method: :delete%></li>
+  <li><%= link_to "Logout", destroy_crew_admin_session_path, method: :delete%></li>
 
 </ul>
 
