@@ -5,7 +5,9 @@
 <head> <% if crew_admin_signed_in? %>
 <li><h3><%= current_crew_admin.email %></h3></li>
   <h3>Logout_link</h3></li>
-  <li><%= link_to "Logout", destroy_crew_admin_session_path, method: :delete%></li>
+  <li><%= link_to "Logout", destroy_crew_admin_session_path, :method=> :delete%></li>
+
+
 
   <h3>Cadstro_edit_link</h3></li>
   <%= link_to "Editar Cadastro", edit_crew_admin_registration_path%>

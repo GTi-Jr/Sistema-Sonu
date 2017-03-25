@@ -3,14 +3,19 @@
 
 
 <head> <% if crew_admin_signed_in? %>
-
+<li><h3><%= current_crew_admin.email %></h3></li>
   <h3>Logout_link</h3></li>
-  <%= link_to(destroy_crew_admin_session_path, :method => :delete, class: 'btn btn-default btn-flat')  do %>
-  Logout
-  <% end %>
+  <li><%= link_to "Logout", destroy_crew_admin_session_path, :method=> :delete%></li>
+
+
 
   <h3>Cadstro_edit_link</h3></li>
   <%= link_to "Editar Cadastro", edit_crew_admin_registration_path%>
+
+
+  <li><%= link_to "Gerenciar Usuários"%></li>
+    <li><%= link_to "Gerenciar Evento"%></li>
+      <li><%= link_to "Gerenciar Formulários"%></li>
 
 
 
@@ -20,3 +25,12 @@
   <%end%>
 
 <head>
+
+
+
+<div class="row">
+<h3>  Mussum Ipsum, cacilds vidis litro abertis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimiss. Paisis, filhis, espiritis santis. Viva Forevis aptent taciti sociosqu ad litora torquent Si num tem leite então bota uma pinga aí cumpadi!
+
+Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Interagi no mé, cursus quis, vehicula ac nisi. Suco de cevadiss deixa as pessoas mais interessantiss.
+</h3>
+</div>
