@@ -31,6 +31,10 @@ Rails.application.routes.draw do
 
       authenticated  do
         root 'admin_dashboard#index',  as: :authenticated_admin_root
+        get "new_registration" => 'admins/registrations#new', as: :new_admin_registration
+        get "edit_registration" => 'admins/registrations#update', as: :update_admin_registration
+        get "manage_admin" => 'admin_dashboard#manage_admin', as: :manage_admin
+        get "manage_users" => 'admin_dashboard#manage_users', as: :manage_users
       end
 
       unauthenticated do
@@ -77,7 +81,7 @@ Rails.application.routes.draw do
       root to: "users/sessions#new", as: :unauthenticated_user_root
     end
 
-    get '/inscription/cancel' => 'users/registrations#cancel', :as => 'cancel_user_registration'
+    get '/inscription/cancel' => 'users/registrations#destroy', :as => 'cancel_user_registration'
 
     get '/inscription/new' => 'users/registrations#new', :as => 'new_user_registration'
     post '/inscription' => 'users/registrations#create', :as => 'user_registration'

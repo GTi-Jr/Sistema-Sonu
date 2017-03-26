@@ -14,7 +14,7 @@
                <h3 class="box-title">Gerenciamento de Administradores</h3>
             </div>
             <div class="box-header with-border">
-               <%= link_to "Cadastar Novo Admin", new_crew_admin_path, class:"btn btn-info" %>
+               <%= link_to "Cadastar Novo Admin", crew_new_admin_registration_path, class:"btn btn-info" %>
                <div class="box-tools pull-right">
                   <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                </div>
@@ -33,15 +33,15 @@
                      <% if !@admins.nil? %>
                      <% @admins.each do |admin| %>
                      <tr>
-                      <%#  <td><%= admin.name %>
+                        <%#<td><%= admin.name %></td>
                         <td><%= admin.email %></td>
                         <td>
-                           <%= link_to edit_crew_admin_path(admin) do %>
+                           <%= link_to crew_update_admin_registration_path(admin) do %>
                            <small class="btn btn-default dropdown-toggle btn-xs">
                            <i class="fa fa-pencil-square-o"></i> Editar
                            </small>
                            <% end %>
-                           <%= link_to crew_admin_path(admin), method: :delete, data: { confirm: "Deseja realmente apagar o administrador #{admin.name}" } do %>
+                           <%= link_to crew_admin_path(admin), method: :delete, data: { confirm: "Deseja realmente apagar o administrador #{admin.email}" } do %>
                            <small class="btn btn-danger dropdown-toggle btn-xs">
                            <i class="fa fa-pencil-square-o"></i> Excluir
                            </small>

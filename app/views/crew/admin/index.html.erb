@@ -33,7 +33,7 @@
                      <% if !@admins.nil? %>
                      <% @admins.each do |admin| %>
                      <tr>
-                      <%#  <td><%= admin.name %>
+                        <%#<td><%= admin.name %></td>
                         <td><%= admin.email %></td>
                         <td>
                            <%= link_to edit_crew_admin_path(admin) do %>
@@ -41,7 +41,7 @@
                            <i class="fa fa-pencil-square-o"></i> Editar
                            </small>
                            <% end %>
-                           <%= link_to crew_admin_path(admin), method: :delete, data: { confirm: "Deseja realmente apagar o administrador #{admin.name}" } do %>
+                           <%= link_to crew_admin_path(admin), method: :delete, data: { confirm: "Deseja realmente apagar o administrador #{admin.email}" } do %>
                            <small class="btn btn-danger dropdown-toggle btn-xs">
                            <i class="fa fa-pencil-square-o"></i> Excluir
                            </small>

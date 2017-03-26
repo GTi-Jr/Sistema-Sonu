@@ -6,12 +6,12 @@ class Crew::Admins::RegistrationsController < Devise::RegistrationsController
   # def new
   #   super
   # end
-
-  # POST /resource
+  #
+  # # POST /resource
   # def create
   #   super
   # end
-
+  #
   # GET /resource/edit
   # def edit
   #   super
