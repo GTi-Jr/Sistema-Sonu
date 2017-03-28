@@ -34,7 +34,8 @@ Rails.application.routes.draw do
         get "new_registration" => 'admins/registrations#new', as: :new_admin_registration
         get "edit_registration" => 'admins/registrations#update', as: :update_admin_registration
         get "manage_admin" => 'admin_dashboard#manage_admin', as: :manage_admin
-        get "manage_users" => 'admin_dashboard#manage_users', as: :manage_users
+        get "manage_users" => 'users_management#index', as: :manage_users
+        get "edit_users/" => 'users_management#update', as: :edit_user
       end
 
       unauthenticated do
@@ -97,7 +98,7 @@ Rails.application.routes.draw do
 
 
 
-  resource :user
+  resource :users
  #
  #  devise_scope :admin do
  #          get '/login_admin' => 'devise/sessions#new'
